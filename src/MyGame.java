@@ -29,15 +29,10 @@ public class MyGame {
         }
 
         System.out.println("\n" + "Корабль занял боевую позицию! Пора стрелять!");
-        myGame.setFleetPosition();
+        gameField.setFleetPosition(fleet);
 
     }
 
-    public void setFleetPosition() {
-        ArrayList<int> fleetLocation = new ArrayList<int>();
-        //int randomNum = Math.random() * ;
-        //fleetLocation.add();
-        System.out.println(fieldSize);
-    }
+
 }
 
