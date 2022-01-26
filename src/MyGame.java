@@ -6,6 +6,7 @@ public class MyGame {
         MyGame myGame = new MyGame();
         Fleet fleet = new Fleet(); //Создаем экземпляр корабля.
         GameField gameField = new GameField(); //Создаем экземпляр игрового поля.
+        Canon canon = new Canon(); //Создаем экземпляр пушки.
 
         System.out.println("\n" + "Добро пожаловать в игру Морской бой.");
         System.out.println("В ней Вам предстоит угадать, где расположен корабль и потопить его.");
@@ -30,6 +31,11 @@ public class MyGame {
 
         System.out.println("\n" + "Корабль занял боевую позицию! Пора стрелять!");
         gameField.setFleetPosition(fleet);
+        System.out.println("Введите номер поля, куда будем стрелять.");
+
+        //while (!canon.correctCell){ //Переделать на проверку аррейлиста
+            canon.checkShotValue();
+        //}
 
     }
 

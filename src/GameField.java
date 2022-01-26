@@ -14,18 +14,15 @@ public class GameField { //Создаем класс игровое поле.
             System.out.println("Размер игрового поля не может быть меньше 5 или больше 30.");
             System.out.println("Введите размер игрового поля.");
             fieldSize = sc.nextInt();
-
         }
         return fieldSize;
     }
 
     public void setFleetPosition(Fleet fleet) {
-
         int randomNum = (int) (Math.random() * (fieldSize - fleet.fleetSize));
-        for (int x = 0; fleetLocation.size() <= (fleet.fleetSize-1); x++) {
+        for (int x = 0; fleetLocation.size() <= (fleet.fleetSize - 1); x++) {
             fleetLocation.add(randomNum + x + "");
         }
-
-        System.out.println(fleetLocation.toString());
+        //System.out.println(fleetLocation.toString()); // Выводим записанные значения.
     }
 }
