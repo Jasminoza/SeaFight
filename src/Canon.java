@@ -25,7 +25,6 @@ public class Canon {
                 cell = sc.nextLine();
             }
         }
-        //sc.close();
     }
 
     public void startShooting(GameField gameField) {

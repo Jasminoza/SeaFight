@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class GameField { //Создаем класс игровое поле.
     public int fieldSize = 0; //Объявляем и задаем размер игрового поля.
-    public ArrayList<String> fleetLocation = new ArrayList<String>();
+    public ArrayList<String> fleetLocation = new ArrayList<>();
 
 
     public int setFieldSize() { //Создаем метод для задания размера игрового поля.
@@ -23,6 +23,5 @@ public class GameField { //Создаем класс игровое поле.
         for (int x = 1; fleetLocation.size() <= (fleet.fleetSize - 1); x++) {
             fleetLocation.add(randomNum + x + "");
         }
-        //System.out.println(fleetLocation.toString()); // Выводим записанные значения.
     }
 }
