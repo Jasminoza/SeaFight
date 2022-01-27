@@ -1,5 +1,3 @@
-import java.util.Collections;
-
 public class MyGame {
 
     public static void main(String[] args) {
@@ -18,17 +16,17 @@ public class MyGame {
         waitAlittle();
 
         System.out.println("\n" + "Корабль занял боевую позицию! Пора стрелять!");
-        gameField.setFleetPosition(fleet);
+        gameField.setFleetLocation(fleet);
         System.out.println("Введите номер поля, куда будем стрелять. (От 1 до " + gameField.fieldSize + ")");
-        System.out.println(gameField.fleetLocation.toString());
+        System.out.println(gameField.getFleetLocation());
 
-        while (!canon.shootedCellList.containsAll(gameField.fleetLocation)) { //Стреляем, пока не потопим весь корабль
+        while (!canon.shootedCellList.containsAll(gameField.getFleetLocation())) { //Стреляем, пока не потопим весь корабль
             canon.checkShotValue(gameField);
             canon.startShooting(gameField);
-            if (!canon.shootedCellList.containsAll(gameField.fleetLocation)) {
+            if (!canon.shootedCellList.containsAll(gameField.getFleetLocation())) {
                 System.out.println("Делайте следующий ход!");
             } else {
-                System.out.println("Поздравляем! Количество выстрелов: " + canon.shootedCellList.size() + ".");
+                System.out.println("Поздравляем, это был последний выстрел, вы потопили корабль! Количество выстрелов: " + canon.shootedCellList.size() + ".");
             }
         }
     }
