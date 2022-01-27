@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class MyGame {
 
@@ -31,11 +32,15 @@ public class MyGame {
         System.out.println("Введите номер поля, куда будем стрелять. (От 1 до " + gameField.fieldSize + ")");
         System.out.println(gameField.fleetLocation.toString());
 
-        //while (gameField.fleetLocation.equals()){ //Стреляем, пока не потопим весь корабль
-        canon.checkShotValue(gameField);
-        canon.startShooting(gameField);
-        System.out.println("Количество ваших попыток: - " + canon.shotsCounter + ".");
-        //}
+        while (Collections.frequency(gameField.fleetLocation, "-5") < fleet.fleetSize) { //Стреляем, пока не потопим весь корабль
+            canon.checkShotValue(gameField);
+            canon.startShooting(gameField);
+            if (Collections.frequency(gameField.fleetLocation, "-5") < fleet.fleetSize) {
+                System.out.println("Делайте следующий ход!");
+            } else {
+                System.out.println("Поздравляем! Вы потопили корабль за " + canon.shotsCounter + " попыток.");
+            }
+        }
 
         /* НЕОБХОДИМО:
         получить от пользователя стринговое значение хода +++++
