@@ -32,11 +32,11 @@ public class Canon {
             System.out.println("Вы уже сюда стреляли! Выберите другую ячейку.");
         } else {
             shootedCellList.add(shootingCell);
-            int hit = (gameField.fleetLocation.contains(shootingCell) ? 1 : 0);
+            int hit = (gameField.getFleetLocation().contains(shootingCell) ? 1 : 0);
 
             switch (hit) {
                 case (1):
-                    System.out.println(gameField.fleetLocation.toString());
+                    System.out.println(gameField.getFleetLocation().toString());
                     System.out.println("Вы попали!");
                     break;
 
